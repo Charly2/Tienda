@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<div class="login">
+    <input type="text" id="nombre">
+    <input type="text" id="password">
+    <button id="login">Login</button>
+</div>
+<div class="logout">
+    <button id="logout">Logout</button>
+</div>
+
+<h2 id="user">Sin session Iniciada</h2>
+<script src="http://localhost:3000/javascripts/jquery.min.js"></script>
+<script>
+    var nombre = $("#nombre"), password = $("#password"),login = $("#login"),logout=$("#logout");
+
+    login.on('click',function (e) {
+        var r = {'usuario':nombre.val(),'password':password.val() };
+        console.log(r)
+        $.post("http://localhost:3000/login",r,function (data,status) {
+            if (data.status){
+                $("#user").html("bienvenido "+ data.data.email)
+            }
+            else{
+                $("#user").html(data.data)
+            }
+        });
+    });
+
+    logout.on('click',function (e) {
+        $.post("http://localhost:3000/login/logout",function (data,status) {
+            $("#user").html("Sin session Iniciada")
+        });
+    });
+
+</script>
+
+
+</body>
+</html>

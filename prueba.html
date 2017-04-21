@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Prueba del API enhtml</h1>
+<select name="a" id="usr"></select>
+<select name="a" id="prod"></select>
+<input type="text" id="coment" placeholder="" value="asdfasdfanfda df a sdf as df">
+<button id="btn">Guardar</button>
+<button id="btnEl">Eliminar</button>
+<div style="margin-top: 2em;">
+    <input type="text" id="email" placeholder="" value="CSNP00000001">
+    <button id="pro">AddProducto</button>
+</div>
+<script src="/javascripts/jquery.min.js"></script>
+<script>
+
+   var btn =$("#btn");
+   var btnEl =$("#btnEl");
+   var pro =$("#prod");
+   var usr =$("#usr");
+   var btnp = $("#pro");
+
+   /* btnp.on("click",function () {
+        var email = $("#email").val();
+        var a = JSON.stringify( [email, 'J', 'A', '/foto', 'M', '2017-03-01', '5']);
+        var b = JSON.stringify([email, '0', 'c', 'c', 'c', '0', 'c', 'c', 'c', 'c', 'c', 'c']);
+        var c = JSON.stringify( [email, '123']);
+        var r = {'user':a,'dir':b,'log':c};
+        $.post("/usuario/",r,function (data, status) {
+            console.log(data)
+        });
+    });
+*/
+
+
+   btnp.on('click',function () {
+       var x =JSON.stringify( [$("#email").val(), 'Moto Z Play', 'Lenovo', '0', '5000', 'a', 'Juan', 'Musica']);
+       var r = {'pro':x };
+       $.post("/producto",r,function (data,status) {
+           console.log(data);
+       });
+    });
+
+
+
+
+
+   $.get( "/producto")
+       .done(function( data ) {
+            for (var a in data){
+                var node = document.createElement("option");
+                node.value = data[a].idproducto;
+                node.innerHTML = data[a].idproducto;
+                pro.append(node);
+            }
+       });
+   $.get( "/usuario")
+       .done(function( data ) {
+           for (var a in data){
+               var node = document.createElement("option");
+               node.value = data[a].email;
+               node.innerHTML = data[a].email;
+               usr.append(node);
+           }
+       });
+
+
+
+   btn.on('click',function () {
+       var x = JSON.stringify([$("#usr").val(), $("#prod").val(), $("#coment").val()]);
+       var r = {'resena':x };
+       $.post("/resena",r,function (data,status) {
+           console.log(data);
+       });
+   });
+
+   btnEl.on('click',function () {
+       var x = JSON.stringify([$("#usr").val(), $("#prod").val()]);
+       var r = {'resena':x };
+       $.post("/resena",r,function (data,status) {
+           console.log(data);
+       });
+   });
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
