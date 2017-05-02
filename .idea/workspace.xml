@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="93895a9b-e44a-4e9b-b265-59680fc7ce4c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api/login.js" afterPath="$PROJECT_DIR$/routes/api/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api/producto.js" afterPath="$PROJECT_DIR$/routes/api/producto.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api/usuario.js" afterPath="$PROJECT_DIR$/routes/api/usuario.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -481,7 +478,7 @@
       <workItem from="1490400976506" duration="2830000" />
       <workItem from="1490674123557" duration="366000" />
       <workItem from="1492735442372" duration="11968000" />
-      <workItem from="1493683608680" duration="155000" />
+      <workItem from="1493683608680" duration="179000" />
     </task>
     <task id="LOCAL-00001" summary="Login&#10;Producto&#10;Reseña&#10;Usuario&#10;&#10;Session&#10;SocketIO">
       <created>1492749682301</created>
@@ -497,11 +494,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492749902437</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Se subio con algunas combios">
+      <created>1493683786184</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1493683786184</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57993000" />
+    <option name="totallyTimeSpent" value="58017000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -562,7 +566,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Login&#10;Producto&#10;Reseña&#10;Usuario&#10;&#10;Session&#10;SocketIO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login&#10;Producto&#10;Reseña&#10;Usuario&#10;&#10;Session&#10;SocketIO" />
+    <MESSAGE value="Se subio con algunas combios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se subio con algunas combios" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
