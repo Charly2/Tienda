@@ -5,13 +5,14 @@ var router = express.Router();
 
 var usuarioModel = require("../../models/usuario");
 router.get('/', function(req, res, next) {
-    if (typeof req.session.usuario !== 'undefined'){
+  
+    
         usuarioModel.gellAll(function (error,data) {
             res.io.emit("getAll", data);
-            res.status(202).json({'usuarios':data});
+            console.log(data);
+            res.status(202).json({data});
         });
-    }else
-        res.status(202).json({'status':false});
+    
 
 });
 router.post('/', function(req, res, next) {

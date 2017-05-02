@@ -4,13 +4,14 @@ var router = express.Router();
 var productoModel = require("../../models/producto");
 
 router.get('/', function(req, res, next) {
-    if (typeof req.session.usuario !== 'undefined'){
+    //if (typeof req.session.usuario !== 'undefined'){
         productoModel.gellAll(function (error,data) {
             res.io.emit("getAll", data);
-            res.status(202).json({'productos':data});
+            
+            res.status(202).json(data);
         });
-    }else
-        res.status(202).json({'status':false});
+    //}else
+     //   res.status(202).json({'status':false});
 });
 router.post('/', function(req, res, next) {
     if (typeof req.session.usuario !== 'undefined'){
@@ -26,15 +27,14 @@ router.post('/', function(req, res, next) {
         res.status(202).json({'status':false});
 });
 router.get('/:id', function(req, res, next) {
-    if (typeof req.session.usuario !== 'undefined'){
+    
         productoModel.findById(req.params.id,function (error,data) {
             req.session.nombre = data;
             console.log(req.session);
             res.io.emit("byID", data);
             res.status(202).json(data);
         });
-    }else
-        res.status(202).json({'status':false});
+    
 });
 router.delete('/:id', function(req, res, next) {
     if (typeof req.session.usuario !== 'undefined'){

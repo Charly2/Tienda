@@ -7,7 +7,7 @@ var loginModel = require("../../models/login");
 var usuarioModel = require("../../models/usuario");
 
 router.post('/', function(req, res, next) {
-    console.log([req.body.usuario,req.body])
+    
     loginModel.login([req.body.usuario,req.body.password],function (error,data,login) {
         if (error){
             res.status(200).json({'status':false,'data':'usuario no valido'});
